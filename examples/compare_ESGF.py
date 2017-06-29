@@ -64,7 +64,8 @@ def parse_input():
     parser.add_argument('-en','--ensemble', type=str, nargs="*", help='CMIP5 ensemble', required=False)
     parser.add_argument('-ve','--version', type=str, nargs="*", help='CMIP5 version', required=False)
     parser.add_argument('-r','--replica', help='search also replica', action='store_true', required=False)
-    parser.add_argument('-n','--node', type=str, help='ESGF node to use for search', required=False)
+    parser.add_argument('-n','--node', type=str, required=False,
+                        help='ESGF node to use for search (give full URL; e.g. https://esgf-data.dkrz.de/esg-search)', )
     parser.add_argument('-p','--project', type=str, help='ESGF project to search', required=False)
     return vars(parser.parse_args())
 
